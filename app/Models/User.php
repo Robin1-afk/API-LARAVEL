@@ -22,6 +22,8 @@ class User extends Authenticatable implements JWTSubject // Implementar la inter
         'name',
         'email',
         'password',
+        'rol',
+        'id_negocio',
     ];
 
     /**
