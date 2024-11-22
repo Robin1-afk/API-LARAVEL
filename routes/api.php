@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 // Rutas públicas
 Route::middleware('api')->group(function () {
     Route::post('login', [AuthController::class, 'login']);
-    Route::get('allNegocios', [NegocioController::class, 'indexNegocios']);
 });
 
 // Rutas protegidas (requiere JWT)
@@ -31,7 +30,7 @@ Route::middleware('auth:api')->group(function () {
         //Ruta que registra los Negocios
         Route::post('register_negocio',[NegocioController::class, 'storeNegocios']);
         //Ruta que se encarga de consultar todos los negocios en la BD
-        
+        Route::get('allNegocios', [NegocioController::class, 'indexNegocios']);
         //Ruta que se encarga de registrar los usuarios
         Route::post('register', [AuthController::class, 'storeUser']);
     });
